@@ -1,0 +1,31 @@
+[21-Jun-2016 16:37:32 America/Sao_Paulo] PHP Fatal error:  Call to a member function query() on a non-object in /home/eckon/public_html/project/marcos/index.php on line 35
+[21-Jun-2016 16:38:19 America/Sao_Paulo] PHP Fatal error:  Call to a member function query() on a non-object in /home/eckon/public_html/project/marcos/index.php on line 35
+[21-Jun-2016 16:51:50 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 48
+[21-Jun-2016 16:51:50 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 106
+[21-Jun-2016 16:51:50 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 113
+[21-Jun-2016 16:52:21 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/eckon/public_html/project/marcos/index.php on line 125
+[21-Jun-2016 16:52:33 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 48
+[21-Jun-2016 16:52:33 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 106
+[21-Jun-2016 16:53:05 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 48
+[21-Jun-2016 16:55:50 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 48
+[21-Jun-2016 16:55:50 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 106
+[21-Jun-2016 16:55:50 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 113
+[21-Jun-2016 16:58:35 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 48
+[21-Jun-2016 16:58:35 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 106
+[21-Jun-2016 16:58:35 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 113
+[21-Jun-2016 16:58:48 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 48
+[23-Jun-2016 12:38:03 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/eckon/public_html/project/marcos/index.php on line 52
+[24-Jun-2016 10:47:48 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '$stmtuser' (T_VARIABLE) in /home/eckon/public_html/project/marcos/assistir.php on line 90
+[24-Jun-2016 10:50:07 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '$stmtuser' (T_VARIABLE) in /home/eckon/public_html/project/marcos/assistir.php on line 90
+[24-Jun-2016 10:51:07 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '$idUser' (T_VARIABLE), expecting ',' or ';' in /home/eckon/public_html/project/marcos/assistir.php on line 95
+[24-Jun-2016 10:51:27 America/Sao_Paulo] PHP Fatal error:  Call to a member function fetchAll() on a non-object in /home/eckon/public_html/project/marcos/assistir.php on line 91
+[24-Jun-2016 10:51:43 America/Sao_Paulo] PHP Fatal error:  Call to a member function fetchAll() on a non-object in /home/eckon/public_html/project/marcos/assistir.php on line 91
+[24-Jun-2016 10:52:35 America/Sao_Paulo] PHP Fatal error:  Call to a member function fetchAll() on a non-object in /home/eckon/public_html/project/marcos/assistir.php on line 91
+[24-Jun-2016 10:55:50 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/eckon/public_html/project/marcos/assistir.php on line 91
+[24-Jun-2016 10:56:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '=' in /home/eckon/public_html/project/marcos/assistir.php on line 93
+[24-Jun-2016 10:58:09 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/eckon/public_html/project/marcos/assistir.php on line 97
+[24-Jun-2016 10:58:16 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM) in /home/eckon/public_html/project/marcos/assistir.php on line 91
+[24-Jun-2016 11:06:27 America/Sao_Paulo] PHP Fatal error:  Call to a member function fetchAll() on a non-object in /home/eckon/public_html/project/marcos/assistir.php on line 94
+[24-Jun-2016 15:39:08 America/Sao_Paulo] PHP Fatal error:  Call to a member function fetchAll() on a non-object in /home/eckon/public_html/project/marcos/index.php on line 84
+[27-Jun-2016 11:54:56 America/Sao_Paulo] PHP Fatal error:  Call to a member function fetchAll() on a non-object in /home/eckon/public_html/project/marcos/assistir.php on line 87
+[27-Jun-2016 12:14:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '$_GET' (T_VARIABLE) in /home/eckon/public_html/project/marcos/assistir.php on line 83
