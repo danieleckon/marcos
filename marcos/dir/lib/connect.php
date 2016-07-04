@@ -5,17 +5,17 @@
 
 //Tentativa de conexão
 $username = 'eckon_marcos';
-$password = 'eck1020304050';
+$password = 'eckon@123';
 $hostname = 'cpanel0201.hospedagemdesites.ws';
 $database =	'eckon_marcos';
 
 try{
-$conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+	$conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
 }
 
 //Falha na Conexão
 catch(PDOException $e){
-echo"Não foi possivel conectar ao Banco de Dados.";
+	echo"Não foi possivel conectar ao Banco de Dados.";
 }
 //////////////////////////////////////////////////////////////////////
 ?>
