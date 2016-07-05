@@ -1,6 +1,7 @@
 <?php
-
-require_once ('dir/lib/connect.php');
+require_once 'dir/lib/connect.php';
+require_once 'dir/class/Admin.php';
+require_once 'dir/lib/login.php';
 
 $id = $_GET['id'];
 
@@ -26,7 +27,6 @@ $resultvideo = $stmtvideo->fetchAll(PDO::FETCH_OBJ);
 
 <body>
 <?php include_once"dir/screen/top.php"; ?>
-
 <!-- Page Content -->
 <div class="container">
 	<div class="row">

@@ -13,6 +13,17 @@
 					</button>
 					<a class="navbar-brand" href="index.php"><span style="color:#F00; font-size:22px; font-weight:bold;">HB</span>    HardBike</a>
 				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+					<?php if(empty($login)){echo" ";} ?>
+					
+					<?php if($login){echo"
+					<li><a href='meusvideos.php' style='color:#eee;'>Meus Vídeos</a></li>";}
+					?>
+						
+					</ul>
+				</div>
 			</div>
 			
 			
@@ -20,8 +31,15 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav" style="position:absolute; right:0px;">
-						<li><a href="cadastro.php">Cadastre-se</a></li>
-						<li><a href="login.php">Login</a></li>
+					<?php if(empty($login)){echo"
+						<li><a href='cadastro.php'>Cadastre-se</a></li>
+					<li><a href='login.php'>Login</a></li>";} ?>
+					
+					<?php if($login){echo"
+					<li><a href='#' style='color:#eee;'>"?><span style='color:#888; cursor:text;'><? include"dir/lib/vrfhora.php"; ?></span><?=$admin->viewnome()?><?php echo"</a></li>
+					<li><a href='dir/lib/desconectar.php'>Sair</a></li>";}
+					?>
+						
 					</ul>
 				</div>
 			</div>

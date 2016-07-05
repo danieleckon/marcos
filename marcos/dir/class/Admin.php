@@ -21,7 +21,7 @@ class Admin{
 	$stmt->execute();
 	
 	return $stmt->fetch(PDO::FETCH_ASSOC);
-}
+	}
 	
 	public function find($email){
 		$query = "Select * From admin Where email=:email";
@@ -40,7 +40,7 @@ class Admin{
 	}
 
 	public function inserir(){
-		$query = "Insert into admin(email,nome,login,senha) Values(:email,:nome,:login,:senha)";
+		$query = "Insert into admin(nome,email,login,senha) Values(:nome,:email,:login,:senha)";
 		$stmt = $this->db->prepare($query);
 		$stmt->bindValue(':nome',  $this->getNome());
 		$stmt->bindValue(':email', $this->getEmail());
@@ -116,5 +116,22 @@ class Admin{
 	public function getSenha(){
 		return $this->senha;
 	}
-}
+	
+	
+	public function viewid(){
+	echo $this->id_admin;
+	}
+	public function viewnome(){
+	echo $this->nome;
+	}
+	public function viewemail(){
+	echo $this->email;
+	}
+	public function viewlogin(){
+	echo $this->login;
+	}
+	public function viewsenha(){
+	echo $this->senha;
+	}
+}	
 ?>

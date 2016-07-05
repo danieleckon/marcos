@@ -1,24 +1,10 @@
 <?php
-
 require_once 'dir/lib/connect.php';
 require_once 'dir/class/Admin.php';
+require_once 'dir/lib/login.php';
 
 $cadastrar = $_POST['cadastrar'];
-
-$email = $_POST['email'];
-$nome  = $_POST['nome'];
-$login = $_POST['login'];
-$senha = $_POST['senha'];
-
 $erro = 0;
-
-//Criando Classe OO
-$admin = new Admin($conn);
-$admin->setId("");
-$admin->setNome("$nome");
-$admin->setEmail("$email");
-$admin->setLogin("$login");
-$admin->setSenha("$senha");
 
 if($cadastrar){
 	if((empty($email)) or (empty($nome)) or (empty($login)) or (empty($senha))){

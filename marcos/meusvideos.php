@@ -1,12 +1,13 @@
 <?php
+require_once 'dir/lib/connect.php';
+require_once 'dir/class/Admin.php';
+require_once 'dir/lib/login.php';
 
-require_once ('dir/lib/connect.php');
+$id = $_GET['id'];
 
-$vrf = $_GET['vrf'];
-
-$queryvideo  = "SELECT * FROM video AS v JOIN admin AS a ON v.id_admin = a.id_admin WHERE v.categoria = 'Acelerando' ORDER BY data DESC";
+$queryvideo  = 'SELECT * FROM video WHERE id_admin="$admin->viewid()" ORDER BY data DESC';
 $stmtvideo   = $conn->query($queryvideo);
-$resultvideo = $stmtvideo->fetch(PDO::FETCH_ASSOC);
+$resultvideo = $stmtvideo->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <!DOCTYPE html>
@@ -26,13 +27,12 @@ $resultvideo = $stmtvideo->fetch(PDO::FETCH_ASSOC);
 
 <body>
 <?php include_once"dir/screen/top.php"; ?>
-
 <!-- Page Content -->
 <div class="container">
 	<div class="row">
 		<!-- Blog Entries Column -->
 		<div class="col-md-8">
-			<h1>Categoria <small><?php echo"$vrf"; ?></small></h1>
+			<h1>Vídeos <small><?=$admin->viewnome()?></small></h1>
 <?php
 foreach($resultvideo as $videos):
 	require_once"dir/lib/datames.php";

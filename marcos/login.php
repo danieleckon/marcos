@@ -1,13 +1,14 @@
 <?php
-
 require_once 'dir/lib/connect.php';
 require_once 'dir/class/Admin.php';
 
-$acessar = $_POST['acessar'];
+session_start();
+$login = $_SESSION["login"];
+$senha = $_SESSION["senha"];
 
+$acessar = $_POST['acessar'];
 $login = $_POST['login'];
 $senha = $_POST['senha'];
-
 $erro = 0;
 
 if($acessar){
@@ -16,39 +17,28 @@ if($acessar){
 	}
 }
 
-
-
-
-
-
 //Criando Classe Administrador
-	$admin = new Admin($conn);	
-	
+$admin = new Admin($conn);
+
 $resp = $admin->verificar($login, $senha);
 
-$id    = $resp['id_admin'];
-$nome  = $resp['nome'];
-$email = $resp['email'];
-
-	$admin->setId("id");
-	$admin->setNome("individuo");
-	$admin->setEmail("malito");
-	$admin->setLogin("login");
-	$admin->setSenha("senha");
+$admin->setId($resp['id_admin']);
+$admin->setNome($resp['nome']);
+$admin->setEmail($resp['email']);
+$admin->setLogin($resp['login']);
+$admin->setSenha($resp['senha']);
 
 
-
-
-
-
-
-if($cadastrar and $erro==0){
-	$admin->inserir();
+if($resp){
+	//Dados Pessoa
+	$_SESSION["id_admin"] = $resp['id_admin'];
+	$_SESSION["nome"]	  = $resp['nome'];
+	$_SESSION["email"]	  = $resp['email'];
+	$_SESSION["login"]	  = $resp['login'];
+	$_SESSION["senha"]	  = $resp['senha'];
+	
 	header("Location: index.php");
 }
-	
-//$admin->alterar();
-//$admin->deletar(7);
 
 ?>
 
@@ -68,11 +58,7 @@ if($cadastrar and $erro==0){
 
 
 <body>
-<?php include_once"dir/screen/top.php";
-
-
-echo $resp['nome']; echo" ".$resp['email']; echo"- $id, $nome, $email<br>-"; ?>
-<?=$admin->nome?>
+<?php include_once"dir/screen/top.php"; ?>
 <!-- Page Content -->
 <div class="container">
 	<div class="row">

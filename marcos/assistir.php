@@ -1,13 +1,13 @@
 <?php
-
-require_once ('dir/lib/connect.php');
+require_once 'dir/lib/connect.php';
+require_once 'dir/class/Admin.php';
+require_once 'dir/lib/login.php';
 
 $id = $_GET['id'];
 
 $queryvideo  = "SELECT * FROM video AS v JOIN admin AS a ON v.id_admin = a.id_admin WHERE v.id_video=$id ORDER BY data DESC";
 $stmtvideo   = $conn->query($queryvideo);
 $resultvideo = $stmtvideo->fetchAll(PDO::FETCH_OBJ);
-
 ?>
 
 <!DOCTYPE html>
