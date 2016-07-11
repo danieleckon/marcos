@@ -18,4 +18,3 @@ catch(PDOException $e){
 	echo"Não foi possivel conectar ao Banco de Dados.";
 }
 //////////////////////////////////////////////////////////////////////
-?>

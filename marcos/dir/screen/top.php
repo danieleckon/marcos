@@ -19,7 +19,9 @@
 					<?php if(empty($login)){echo" ";} ?>
 					
 					<?php if($login){echo"
-					<li><a href='meusvideos.php' style='color:#eee;'>Meus Vídeos</a></li>";}
+					<li><a href='meusvideos.php'>Meus Vídeos</a></li>
+					<li><a href='adicionar.php'>Adicionar</a></li>
+					<li><a href='index.php'>Todos</a></li>";}
 					?>
 						
 					</ul>
@@ -36,7 +38,7 @@
 					<li><a href='login.php'>Login</a></li>";} ?>
 					
 					<?php if($login){echo"
-					<li><a href='#' style='color:#eee;'>"?><span style='color:#888; cursor:text;'><? include"dir/lib/vrfhora.php"; ?></span><?=$admin->viewnome()?><?php echo"</a></li>
+					<li><a href='#' style='color:#eee;'>"?><span style='color:#888; cursor:text;'><? include"dir/lib/vrfhora.php"; ?></span><?=$admin->getNome()?><?php echo"</a></li>
 					<li><a href='dir/lib/desconectar.php'>Sair</a></li>";}
 					?>
 						

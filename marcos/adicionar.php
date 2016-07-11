@@ -1,6 +1,6 @@
 <?php
 require_once 'dir/lib/connect.php';
-require_once 'dir/class/Admin.php';
+require_once 'dir/class/Video.php';
 require_once 'dir/lib/login.php';
 
 $cadastrar = $_POST['cadastrar'];

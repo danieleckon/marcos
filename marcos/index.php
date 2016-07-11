@@ -1,7 +1,11 @@
 <?php
 require_once 'dir/lib/connect.php';
 require_once 'dir/class/Admin.php';
+require_once 'dir/class/Video.php';
+require_once 'dir/class/Conversor.php';
 require_once 'dir/lib/login.php';
+
+$atualdata = new Conversor($conn);
 
 $id = $_GET['id'];
 
@@ -42,8 +46,8 @@ foreach($resultvideo as $videos):
 			<h2>
 				<a href="#"><?=$videos->titulo?></a>
 			</h2>
-			<p class="lead">by <a href="#"><?=$videos->nome;?></a></p>
-			<p><span class="glyphicon glyphicon-time"></span><? echo" Publicado em $userdata[2] de $userdatames de $userdata[0] as $userhora[0]:$userhora[1]";?></p>
+			<p class="lead">by <a href="autor.php?nome=<?=$videos->nome;?>"><?=$videos->nome;?></a></p>
+			<p><span class="glyphicon glyphicon-time"></span> <?=$atualdata->data($videos->data, $videos->hora)?></p>
 			<?=$videos->thumbnail?>
 			<p style="margin-top:10px;"><?=$videos->descricao?></p>
 			<form action="assistir.php" method="get" ><button class="btn btn-primary" name="id" value="<?=$videos->id_video;?>" type="submit">Assistir Vídeo <span class="glyphicon glyphicon-chevron-right"></span></button></form>
@@ -67,6 +71,7 @@ foreach($resultvideo as $videos):
 			<?php include"dir/screen/hardbiker.php";?>
 			<!-- Tela Menu Categoria -->
 			<?php include"dir/screen/rgcategoria.php";?>
+			<?=$atualdata->data(1995, 3, 19, '20:15')?>
 		</div>
 	</div>
 	<!-- Footer -->

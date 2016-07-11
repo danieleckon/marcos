@@ -15,7 +15,7 @@ if($acessar){
 	if((empty($login)) or (empty($senha))){
 		$erro=1;
 	}
-}
+};
 
 //Criando Classe Administrador
 $admin = new Admin($conn);
@@ -28,6 +28,7 @@ $admin->setEmail($resp['email']);
 $admin->setLogin($resp['login']);
 $admin->setSenha($resp['senha']);
 
+$id = $resp['id_admin'];
 
 if($resp){
 	//Dados Pessoa
@@ -37,9 +38,8 @@ if($resp){
 	$_SESSION["login"]	  = $resp['login'];
 	$_SESSION["senha"]	  = $resp['senha'];
 	
-	header("Location: index.php");
+	header("Location: meusvideos.php");
 }
-
 ?>
 
 <!DOCTYPE html>

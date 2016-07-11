@@ -43,7 +43,7 @@ foreach($resultvideo as $videos):
 				<a href="#"><?=$videos->titulo?></a>
 			</h2>
 			<p class="lead">by <a href="#"><?=$videos->nome;?></a></p>
-			<p><span class="glyphicon glyphicon-time"></span><? echo" Publicado em $userdata[2] de $userdatames de $userdata[0] as $userhora[0]:$userhora[1]";?></p>
+			<p><span class="glyphicon glyphicon-time"></span> <?=$atualdata->data($videos->data, $videos->hora)?></p>
 			<?=$videos->thumbnail?>
 			<p style="margin-top:10px;"><?=$videos->descricao?></p>
 			<form action="assistir.php" method="get" ><button class="btn btn-primary" name="id" value="<?=$videos->id_video;?>" type="submit">Assistir Vídeo <span class="glyphicon glyphicon-chevron-right"></span></button></form>
