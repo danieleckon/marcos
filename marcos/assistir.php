@@ -1,7 +1,10 @@
 <?php
 require_once 'dir/lib/connect.php';
-require_once 'dir/class/Admin.php';
 require_once 'dir/lib/login.php';
+
+function __autoload($classe){
+	include_once("dir/class/".$classe.".php");
+}
 
 $id = $_GET['id'];
 

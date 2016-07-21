@@ -1,10 +1,16 @@
 <?php
+require_once 'dir/class/Connect.php';
+
+function __autoload($classe){
+	include_once("dir/class/".$classe.".php");
+}
+
 session_start();
 $login = $_SESSION["login"];
 $senha = $_SESSION["senha"];
 
-//Criando Classe Administrador
-$admin = new Admin($conn);
+//Instanciando Objeto da Classe Administrador
+$admin = new Admin($connect->conn);
 
 $resp = $admin->verificar($login, $senha);
 
@@ -14,8 +20,8 @@ $admin->setEmail($resp['email']);
 $admin->setLogin($resp['login']);
 $admin->setSenha($resp['senha']);
 
-//Criando Classe Video
-$video = new Video($conn);
+//Instanciando Objeto da Classe Video
+$video = new Video($connect->conn);
 
 $locvid = $video->find(1);
 

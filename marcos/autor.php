@@ -1,13 +1,13 @@
 <?php
-require_once 'dir/lib/connect.php';
-require_once 'dir/class/Admin.php';
-require_once 'dir/class/Video.php';
+require_once 'dir/class/Connect.php';
 require_once 'dir/lib/login.php';
+
+$atualdata = new Conversor($connect->conn);
 
 $autor = $_GET['nome'];
 
 $queryvideo  = "SELECT * FROM admin AS a JOIN video AS v ON a.id_admin = v.id_admin WHERE a.nome = 'Daniel Carlos' ORDER BY data DESC";
-$stmtvideo   = $conn->query($queryvideo);
+$stmtvideo   = $connect->conn->query($queryvideo);
 $resultvideo = $stmtvideo->fetchAll(PDO::FETCH_OBJ);
 ?>
 
@@ -36,14 +36,13 @@ $resultvideo = $stmtvideo->fetchAll(PDO::FETCH_OBJ);
 			<h1>Vídeos <small>de <?echo"$autor";?></small></h1>
 <?php
 foreach($resultvideo as $videos):
-	require_once"dir/lib/datames.php";
 ?>
 			<!-- First Blog Post -->
 			<hr>
 			<h2>
 				<a href="#"><?=$videos->titulo?></a>
 			</h2>
-			<p><span class="glyphicon glyphicon-time"></span><? echo" Publicado em $userdata[2] de $userdatames de $userdata[0] as $userhora[0]:$userhora[1]";?></p>
+			<p><span class="glyphicon glyphicon-time"></span> <?=$atualdata->publicacao($videos->data)?></p>
 			<?=$videos->thumbnail?>
 			<p style="margin-top:10px;"><?=$videos->descricao?></p>
 			<form action="assistir.php" method="get" ><button class="btn btn-primary" name="id" value="<?=$videos->id_video;?>" type="submit">Assistir Vídeo <span class="glyphicon glyphicon-chevron-right"></span></button></form>

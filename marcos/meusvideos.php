@@ -1,9 +1,10 @@
 <?php
 require_once 'dir/lib/connect.php';
-require_once 'dir/class/Admin.php';
-require_once 'dir/class/Video.php';
-require_once 'dir/class/Conversor.php';
 require_once 'dir/lib/login.php';
+
+function __autoload($classe){
+	include_once("dir/class/".$classe.".php");
+}
 
 $atualdata = new Conversor($conn);
 
@@ -36,20 +37,18 @@ $resultvideo = $stmtvideo->fetchAll(PDO::FETCH_OBJ);
 	<div class="row">
 		<!-- Blog Entries Column -->
 		<div class="col-md-8">
-			<h1>Vídeos <small>de <?=$admin->getNome()?><?echo"$teste[0]";?></small></h1>
-<?php
-foreach($resultvideo as $videos):
-?>
-			<!-- First Blog Post -->
-			<hr>
-			<h2>
-				<a href="#"><?=$videos->titulo?></a>
-			</h2>
-			<p><span class="glyphicon glyphicon-time"></span> <?=$atualdata->data($videos->data, $videos->hora)?></p>
-			<?=$videos->thumbnail?>
-			<p style="margin-top:10px;"><?=$videos->descricao?></p>
-			<form action="assistir.php" method="get" ><button class="btn btn-primary" name="id" value="<?=$videos->id_video;?>" type="submit">Assistir Vídeo <span class="glyphicon glyphicon-chevron-right"></span></button></form>
-<?php endforeach; ?>
+			<h1>Vídeos <small>de <?=$admin->getNome()?></small></h1>
+			<?php foreach($resultvideo as $videos): ?>
+				<!-- First Blog Post -->
+				<hr>
+				<h2>
+					<a href="#"><?=$videos->titulo?></a>
+				</h2>
+				<p><span class="glyphicon glyphicon-time"></span> <?=$atualdata->publicacao($videos->data)?></p>
+				<?=$videos->thumbnail?>
+				<p style="margin-top:10px;"><?=$videos->descricao?></p>
+				<form action="assistir.php" method="get" ><button class="btn btn-primary" name="id" value="<?=$videos->id_video;?>" type="submit">Assistir Vídeo <span class="glyphicon glyphicon-chevron-right"></span></button></form>
+			<?php endforeach; ?>
 			<!-- Pager ->
 			<ul class="pager">
 				<li class="previous">

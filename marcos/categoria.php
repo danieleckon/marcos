@@ -1,6 +1,10 @@
 <?php
-
 require_once ('dir/lib/connect.php');
+
+
+function __autoload($classe){
+	include_once("dir/class/".$classe.".php");
+}
 
 $vrf = $_GET['vrf'];
 

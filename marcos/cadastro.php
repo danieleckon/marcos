@@ -1,6 +1,4 @@
 <?php
-require_once 'dir/lib/connect.php';
-require_once 'dir/class/Admin.php';
 require_once 'dir/lib/login.php';
 
 $cadastrar = $_POST['cadastrar'];
@@ -19,7 +17,6 @@ if($cadastrar and $erro==0){
 	
 //$admin->alterar();
 //$admin->deletar(7);
-
 ?>
 
 <!DOCTYPE html>

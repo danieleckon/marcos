@@ -1,45 +1,10 @@
 <?php
-require_once 'dir/lib/connect.php';
-require_once 'dir/class/Admin.php';
-
-session_start();
-$login = $_SESSION["login"];
-$senha = $_SESSION["senha"];
+require_once 'dir/lib/login.php';
 
 $acessar = $_POST['acessar'];
 $login = $_POST['login'];
 $senha = $_POST['senha'];
 $erro = 0;
-
-if($acessar){
-	if((empty($login)) or (empty($senha))){
-		$erro=1;
-	}
-};
-
-//Criando Classe Administrador
-$admin = new Admin($conn);
-
-$resp = $admin->verificar($login, $senha);
-
-$admin->setId($resp['id_admin']);
-$admin->setNome($resp['nome']);
-$admin->setEmail($resp['email']);
-$admin->setLogin($resp['login']);
-$admin->setSenha($resp['senha']);
-
-$id = $resp['id_admin'];
-
-if($resp){
-	//Dados Pessoa
-	$_SESSION["id_admin"] = $resp['id_admin'];
-	$_SESSION["nome"]	  = $resp['nome'];
-	$_SESSION["email"]	  = $resp['email'];
-	$_SESSION["login"]	  = $resp['login'];
-	$_SESSION["senha"]	  = $resp['senha'];
-	
-	header("Location: meusvideos.php");
-}
 ?>
 
 <!DOCTYPE html>
